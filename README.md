@@ -39,17 +39,17 @@ Appleが提供するFrameworkは2文字のプレフィックスがつけられ�
 
 ```
 クラス
-@interface SDTTopViewController : UIViewController
+@interface STVTopViewController : UIViewController
 
 プロトコル
-@protocol SDTSampleProtocol
+@protocol STVSampleProtocol
 
 列挙体
-typedef NS_ENUM(NSInteger, SDTGlobalConstants)
+typedef NS_ENUM(NSInteger, STVGlobalConstants)
 
 定数
-static NSString *const SDTAboutViewControllerCompanyName = @"SDT";
-extern NSString *const SDTAboutViewControllerCompanyName;
+static NSString *const STVAboutViewControllerCompanyName = @"STV";
+extern NSString *const STVAboutViewControllerCompanyName;
 
 ```
 
@@ -66,8 +66,8 @@ extern NSString *const SDTAboutViewControllerCompanyName;
 typedef NS_ENUM(NSInteger, globalConstants)
 
 定数
-#define kCompanyName @"SDT";
-static NSString *const aboutViewControllerCompanyName = @"SDT";
+#define kCompanyName @"STV";
+static NSString *const aboutViewControllerCompanyName = @"STV";
 extern NSString *const aboutViewControllerCompanyName;
 
 ```
@@ -185,11 +185,11 @@ ArticleNavigationBarBlackSelected / ArticleNavigationBarBlackSelected@2x
 @import QuartzCore;
 
 // Models
-#import "SDTUser.h"
+#import "STVUser.h"
 
 // Views
-#import "SDTButton.h"
-#import "SDTUserView.h"
+#import "STVButton.h"
+#import "STVUserView.h"
 ```
 
 ##Pragma Mark
@@ -226,7 +226,7 @@ ArticleNavigationBarBlackSelected / ArticleNavigationBarBlackSelected@2x
 
 - (void)privateMethod {}
 
-#pragma mark - SDTSampleProtocol
+#pragma mark - STVSampleProtocol
 
 #pragma mark - UICollectionViewDataSource
 
@@ -316,14 +316,14 @@ KVO(Key-Value Observing)やNotificationCenter通知を登録した場合は、�
 **推奨**
 
 ```
-self.productsRequest = [[SDTProductsRequest alloc]
+self.productsRequest = [[STVProductsRequest alloc]
     initWithProductIdentifiers:productIdentifiers];
 ```
 
 **非推奨**
 
 ```
-self.productsRequest = [[SDTProductsRequest alloc] initWithProductIdentifiers:productIdentifiers];
+self.productsRequest = [[STVProductsRequest alloc] initWithProductIdentifiers:productIdentifiers];
 ```
 
 #プロパティ
@@ -337,7 +337,7 @@ self.productsRequest = [[SDTProductsRequest alloc] initWithProductIdentifiers:pr
 **例**
 
 ```
-@interface SDTDetailViewController ()
+@interface STVDetailViewController ()
 
 @property (strong, nonatomic) GADBannerView *googleAdView;
 
@@ -450,7 +450,7 @@ CGRect frame = (CGRect){ .origin = CGPointZero, .size = frame.size };
 ```
 @interface Airplane
 
-+ (instancetype)airplaneWithType:(SDTAirplaneType)type;
++ (instancetype)airplaneWithType:(STVAirplaneType)type;
 
 @end
 ```
@@ -520,29 +520,29 @@ case文で複数行の処理を{ }で囲う必要がある場合、case文と同
 
 ```
 
-typedef NS_ENUM(NSInteger, SDTScreenType) {
+typedef NS_ENUM(NSInteger, STVScreenType) {
 
-    SDTScreenTypeMain,
-    SDTScreenTypeDetail,
-    SDTScreenTypeInformation
-    SDTScreenTypeSetting
+    STVScreenTypeMain,
+    STVScreenTypeDetail,
+    STVScreenTypeInformation
+    STVScreenTypeSetting
 };
 
 switch (screenType) {
 
-    case SDTScreenTypeMain:
+    case STVScreenTypeMain:
         // 処理
         break;
 
-    case SDTScreenTypeDetail: {
+    case STVScreenTypeDetail: {
         // 
         // 複数行の処理
         // 
         break;
     }
 
-    case SDTScreenTypeInformation:
-    case SDTScreenTypeSetting:
+    case STVScreenTypeInformation:
+    case STVScreenTypeSetting:
         // 処理
         break;
 }
